@@ -4,15 +4,18 @@ import { IProduct } from "../model/Product";
 import { GetAllProductsUseCase } from "../useCases/GetAllProductsUseCase";
 import { CreateProductsUseCase } from "../useCases/CreateProductsUseCase";
 import { parseRequestBody } from "../shared/parseRequestBody";
+import { parse } from "url";
+import { GetProductByIdUseCase } from "../useCases/GetProductByIdUseCase";
 
 export class ProductController {
     private getAllProductUseCase: GetAllProductsUseCase;
     private createProductUseCase: CreateProductsUseCase;
+    private getProductByIdUseCase: GetProductByIdUseCase;
 
     constructor() {
         this.getAllProductUseCase = new GetAllProductsUseCase(new RepositoryProductImpl());
         this.createProductUseCase = new CreateProductsUseCase(new RepositoryProductImpl());
-
+        this.getProductByIdUseCase = new GetProductByIdUseCase(new RepositoryProductImpl());
     }
 
     public async createProduct(req: IncomingMessage, res: ServerResponse): Promise<void> {
@@ -43,6 +46,28 @@ export class ProductController {
         } catch (error) {
             res.statusCode = 500;
             res.end(JSON.stringify({ message: "Erro ao buscar produtos", error }))
+        }
+    }
+
+    public async getByIdProductsUseCase(req: IncomingMessage, res: ServerResponse): Promise<void> {
+        try {
+            const parsedUrl = parse(req.url || "", true);
+            const id = parsedUrl.pathname?.split("/").pop();
+
+            if (!id) {
+                res.statusCode = 400;
+                res.end(JSON.stringify({ message: "ID inválido ou não fornecido!" }));
+                return;
+            }
+
+            const product: IProduct | null = await this.getProductByIdUseCase.execute(id);
+
+            res.setHeader("Content-Type", "application/json");
+            res.statusCode = 200;
+            res.end(JSON.stringify(product));
+        } catch (error) {
+            res.statusCode = 500;
+            res.end(JSON.stringify({ message: "Erro ao buscar produto", error }))
         }
     }
 }

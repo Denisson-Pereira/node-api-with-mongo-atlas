@@ -3,6 +3,10 @@ import { IProduct } from "../model/Product";
 import { IRepositoryProduct } from "../ports/IRepositoryProduct";
 
 export class RepositoryProductImpl implements IRepositoryProduct {
+    async getProductById(id: string): Promise<IProduct | null> {
+        const response = await ProductModel.findById(id);
+        return response;
+    }
     async save(product: IProduct): Promise<IProduct> {
         await ProductModel.create(product);
         return product;
