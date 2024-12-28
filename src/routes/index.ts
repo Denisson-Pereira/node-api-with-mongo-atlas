@@ -12,7 +12,6 @@ export const productRoutes = (req: IncomingMessage, res: ServerResponse): void =
         const id = req.url.split("/")[2]; 
         
         if (id) {
-            req.url = id;
             productController.getByIdProductsUseCase(req, res);
         } else {
             res.statusCode = 400;
@@ -36,7 +35,7 @@ export const productRoutes = (req: IncomingMessage, res: ServerResponse): void =
             res.statusCode = 400;
             res.end(JSON.stringify({ message: "ID inválido ou ausente" }));
         }
-        
+
     } else {
         res.statusCode = 404;
         res.end(JSON.stringify({ message: "Rota não encontrada" }));
