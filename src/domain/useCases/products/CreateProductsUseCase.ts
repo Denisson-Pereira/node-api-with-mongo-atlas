@@ -1,6 +1,6 @@
-import { IProduct } from "../model/Product";
-import { IRepositoryProduct } from "../../ports/IRepositoryProduct";
-import { InvalidPriceError } from "../exceptions/InvalidPriceError";
+import { IProduct } from "../../model/Product";
+import { IRepositoryProduct } from "../../../ports/IRepositoryProduct";
+import { InvalidPriceError } from "../../exceptions/InvalidPriceError";
 
 export class CreateProductsUseCase {
     private repository: IRepositoryProduct;

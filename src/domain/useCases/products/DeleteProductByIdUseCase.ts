@@ -1,5 +1,5 @@
-import { IRepositoryProduct } from "../../ports/IRepositoryProduct";
-import { InvalidIdError } from "../exceptions/InvalidIdError";
+import { IRepositoryProduct } from "../../../ports/IRepositoryProduct";
+import { InvalidIdError } from "../../exceptions/InvalidIdError";
 
 export class DeleteProductByIdUseCase {
     private repository: IRepositoryProduct;
