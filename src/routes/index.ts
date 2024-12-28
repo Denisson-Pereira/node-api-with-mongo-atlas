@@ -18,6 +18,25 @@ export const productRoutes = (req: IncomingMessage, res: ServerResponse): void =
             res.statusCode = 400;
             res.end(JSON.stringify({ message: "ID inválido ou ausente" }));
         }
+    } else if (req.method === 'DELETE' && req.url?.startsWith("/products/")) {
+        const id = req.url.split("/")[2];
+
+        if (id) {
+            productController.deleteByIdProductUseCase(req, res);
+        } else {
+            res.statusCode = 400;
+            res.end(JSON.stringify({ message: "ID inválido ou ausente" }));
+        }
+    } else if (req.method === 'PUT' && req.url?.startsWith("/products/")) {
+        const id = req.url.split("/")[2];
+
+        if(id) {
+            productController.putProductByIdUseCase(req, res);
+        } else {
+            res.statusCode = 400;
+            res.end(JSON.stringify({ message: "ID inválido ou ausente" }));
+        }
+        
     } else {
         res.statusCode = 404;
         res.end(JSON.stringify({ message: "Rota não encontrada" }));
