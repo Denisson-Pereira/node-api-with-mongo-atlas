@@ -1,4 +1,4 @@
-import { IProduct } from "../model/Product";
+import { IProduct } from "../domain/model/Product";
 
 export interface IRepositoryProduct {
     getAllProducts(): Promise<IProduct[]>

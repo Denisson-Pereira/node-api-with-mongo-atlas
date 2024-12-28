@@ -1,5 +1,5 @@
 import { IProduct } from "../model/Product";
-import { IRepositoryProduct } from "../ports/IRepositoryProduct";
+import { IRepositoryProduct } from "../../ports/IRepositoryProduct";
 
 export class GetProductByIdUseCase {
     private repository: IRepositoryProduct;

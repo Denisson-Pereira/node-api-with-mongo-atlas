@@ -1,6 +1,6 @@
 import http, { IncomingMessage, ServerResponse } from 'node:http'
 import { productRoutes } from './routes';
-import { main } from './database/conn';
+import { main } from './drivers/conn';
 
 const PORT = 8000;
 

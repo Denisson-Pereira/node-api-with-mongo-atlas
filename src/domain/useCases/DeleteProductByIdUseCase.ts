@@ -1,4 +1,5 @@
-import { IRepositoryProduct } from "../ports/IRepositoryProduct";
+import { IRepositoryProduct } from "../../ports/IRepositoryProduct";
+import { InvalidIdError } from "../exceptions/InvalidIdError";
 
 export class DeleteProductByIdUseCase {
     private repository: IRepositoryProduct;
@@ -8,6 +9,9 @@ export class DeleteProductByIdUseCase {
     }
 
     async execute(id: string): Promise<string> {
+        if (!id) {
+            throw new InvalidIdError();
+        }
         return this.repository.deleteById(id);
     }
 }

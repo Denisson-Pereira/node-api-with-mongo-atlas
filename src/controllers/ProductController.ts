@@ -1,13 +1,15 @@
 import { IncomingMessage, ServerResponse } from "http";
 import { RepositoryProductImpl } from "../adapters/RepositoryProductImpl";
-import { IProduct } from "../model/Product";
-import { GetAllProductsUseCase } from "../useCases/GetAllProductsUseCase";
-import { CreateProductsUseCase } from "../useCases/CreateProductsUseCase";
+import { IProduct } from "../domain/model/Product";
+import { GetAllProductsUseCase } from "../domain/useCases/GetAllProductsUseCase";
+import { CreateProductsUseCase } from "../domain/useCases/CreateProductsUseCase";
 import { parseRequestBody } from "../shared/parseRequestBody";
 import { parse } from "url";
-import { GetProductByIdUseCase } from "../useCases/GetProductByIdUseCase";
-import { DeleteProductByIdUseCase } from "../useCases/DeleteProductByIdUseCase";
-import { PutProductUseCase } from "../useCases/PutProductUseCase";
+import { GetProductByIdUseCase } from "../domain/useCases/GetProductByIdUseCase";
+import { DeleteProductByIdUseCase } from "../domain/useCases/DeleteProductByIdUseCase";
+import { PutProductUseCase } from "../domain/useCases/PutProductUseCase";
+import { InvalidPriceError } from "../domain/exceptions/InvalidPriceError";
+import { InvalidIdError } from "../domain/exceptions/InvalidIdError";
 
 export class ProductController {
     private getAllProductUseCase: GetAllProductsUseCase;
@@ -36,8 +38,13 @@ export class ProductController {
             res.end(JSON.stringify(response)); 
 
         } catch (error) {
-            res.statusCode = 500;
-            res.end(JSON.stringify({ message: "Erro ao criar produto", error }));
+            if (error instanceof InvalidPriceError) {
+                res.statusCode = error.statusCode;  
+                res.end(JSON.stringify({ message: error.message })); 
+            } else {
+                res.statusCode = 500;
+                res.end(JSON.stringify({ message: "Erro ao criar produto", error }));
+            }
         }
     }
 
@@ -94,8 +101,13 @@ export class ProductController {
             res.end(JSON.stringify({  message: "Produto deletado com sucesso!" }));
 
         } catch (error) {
-            res.statusCode = 500;
-            res.end(JSON.stringify({ message: "Erro ao deletar produto", error }))
+            if (error instanceof InvalidIdError) {
+                res.statusCode = error.statusCode;  
+                res.end(JSON.stringify({ message: error.message })); 
+            } else {
+                res.statusCode = 500;
+                res.end(JSON.stringify({ message: "Erro deletar produto", error }));
+            }
         }
     }
 
@@ -118,8 +130,13 @@ export class ProductController {
             res.end(JSON.stringify(newProduct));
 
         } catch (error) {
-            res.statusCode = 500;
-            res.end(JSON.stringify({ message: "Erro ao editar produto", error }))
+            if (error instanceof InvalidPriceError) {
+                res.statusCode = error.statusCode;  
+                res.end(JSON.stringify({ message: error.message })); 
+            } else {
+                res.statusCode = 500;
+                res.end(JSON.stringify({ message: "Erro ao editar produto", error }));
+            }
         }
     }
 }
