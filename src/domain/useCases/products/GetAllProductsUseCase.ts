@@ -1,5 +1,5 @@
 import { IProduct } from "../../model/Product";
-import { IRepositoryProduct } from "../../../ports/IRepositoryProduct";
+import { IRepositoryProduct } from "../../../interfaceAdapters/ports/IRepositoryProduct";
 
 export class GetAllProductsUseCase {
     private repository: IRepositoryProduct;

@@ -1,4 +1,4 @@
-import { IRepositoryCategory } from "../../../ports/IRepositoryCategory";
+import { IRepositoryCategory } from "../../../interfaceAdapters/ports/IRepositoryCategory";
 import { ICategory } from "../../model/Category";
 
 

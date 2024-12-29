@@ -1,5 +1,5 @@
 import { IncomingMessage, ServerResponse } from "http";
-import { ProductController } from "../controllers/ProductController";
+import { ProductController } from "../../interfaceAdapters/controllers/ProductController";
 
 const productController = new ProductController();
 

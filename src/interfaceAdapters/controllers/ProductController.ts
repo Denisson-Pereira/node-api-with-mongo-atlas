@@ -1,15 +1,15 @@
 import { IncomingMessage, ServerResponse } from "http";
 import { RepositoryProductImpl } from "../adapters/RepositoryProductImpl";
-import { IProduct } from "../domain/model/Product";
-import { GetAllProductsUseCase } from "../domain/useCases/products/GetAllProductsUseCase";
-import { CreateProductsUseCase } from "../domain/useCases/products/CreateProductsUseCase";
-import { parseRequestBody } from "../shared/parseRequestBody";
+import { IProduct } from "../../domain/model/Product";
+import { GetAllProductsUseCase } from "../../domain/useCases/products/GetAllProductsUseCase";
+import { CreateProductsUseCase } from "../../domain/useCases/products/CreateProductsUseCase";
+import { parseRequestBody } from "../../driversAndFrameworks/http/parseRequestBody";
 import { parse } from "url";
-import { GetProductByIdUseCase } from "../domain/useCases/products/GetProductByIdUseCase";
-import { DeleteProductByIdUseCase } from "../domain/useCases/products/DeleteProductByIdUseCase";
-import { PutProductUseCase } from "../domain/useCases/products/PutProductUseCase";
-import { InvalidPriceError } from "../domain/exceptions/InvalidPriceError";
-import { InvalidIdError } from "../domain/exceptions/InvalidIdError";
+import { GetProductByIdUseCase } from "../../domain/useCases/products/GetProductByIdUseCase";
+import { DeleteProductByIdUseCase } from "../../domain/useCases/products/DeleteProductByIdUseCase";
+import { PutProductUseCase } from "../../domain/useCases/products/PutProductUseCase";
+import { InvalidPriceError } from "../../domain/exceptions/InvalidPriceError";
+import { InvalidIdError } from "../../domain/exceptions/InvalidIdError";
 
 export class ProductController {
     private getAllProductUseCase: GetAllProductsUseCase;

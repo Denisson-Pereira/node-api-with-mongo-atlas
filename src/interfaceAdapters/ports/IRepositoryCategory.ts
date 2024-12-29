@@ -1,5 +1,4 @@
-import { ICategory } from "../domain/model/Category";
-import { IProduct } from "../domain/model/Product";
+import { ICategory } from "../../domain/model/Category";
 
 export interface IRepositoryCategory {
     getAllCategories(): Promise<ICategory[]>

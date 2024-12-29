@@ -1,5 +1,5 @@
-import { ProductModel } from "../drivers/ProductSchema";
-import { IProduct } from "../domain/model/Product";
+import { ProductModel } from "../../driversAndFrameworks/db/schemas/ProductSchema";
+import { IProduct } from "../../domain/model/Product";
 import { IRepositoryProduct } from "../ports/IRepositoryProduct";
 
 export class RepositoryProductImpl implements IRepositoryProduct {

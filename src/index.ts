@@ -1,7 +1,7 @@
 import http, { IncomingMessage, ServerResponse } from 'node:http'
-import { productRoutes } from './routes/productRoutes';
-import { main } from './drivers/conn';
-import { categoryRoutes } from './routes/categoryRoutes';
+import { productRoutes } from './driversAndFrameworks/routes/productRoutes';
+import { main } from './driversAndFrameworks/db/connection/connectionMongoose';
+import { categoryRoutes } from './driversAndFrameworks/routes/categoryRoutes';
 import path from 'node:path';
 import fs from 'node:fs'
 
@@ -10,7 +10,7 @@ const PORT = 8000;
 const server = http.createServer((req: IncomingMessage, res: ServerResponse) => {
     switch (true) {
         case req.url === "/":
-            const filePath = path.join(__dirname, "presentation", "views", "index.html");
+        const filePath = path.join(__dirname, "driversAndFrameworks", "ui", "views", "index.html");
 
             fs.readFile(filePath, (err, data) => {
                 if (err) {
@@ -27,7 +27,7 @@ const server = http.createServer((req: IncomingMessage, res: ServerResponse) => 
 
 
         case req.url?.startsWith("/css/"):
-            const filePathCss = path.join(__dirname, "presentation", "css", "styles.css");
+            const filePathCss = path.join(__dirname, "driversAndFrameworks", "ui", "css", "styles.css");
             fs.readFile(filePathCss, (err, data) => {
                 if (err) {
                     console.log("Erro ao ler arquivo css:", err.message);

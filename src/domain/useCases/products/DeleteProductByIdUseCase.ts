@@ -1,4 +1,4 @@
-import { IRepositoryProduct } from "../../../ports/IRepositoryProduct";
+import { IRepositoryProduct } from "../../../interfaceAdapters/ports/IRepositoryProduct";
 import { InvalidIdError } from "../../exceptions/InvalidIdError";
 
 export class DeleteProductByIdUseCase {

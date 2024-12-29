@@ -1,6 +1,6 @@
-import { ICategory } from "../domain/model/Category";
-import { CategoryModel } from "../drivers/CategorySchema";
-import { ProductModel } from "../drivers/ProductSchema";
+import { ICategory } from "../../domain/model/Category";
+import { CategoryModel } from "../../driversAndFrameworks/db/schemas/CategorySchema";
+import { ProductModel } from "../../driversAndFrameworks/db/schemas/ProductSchema";
 import { IRepositoryCategory } from "../ports/IRepositoryCategory";
 
 export class RepositoryCategoryImpl implements IRepositoryCategory {

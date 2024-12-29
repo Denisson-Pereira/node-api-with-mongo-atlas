@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
-import { IProduct } from "../domain/model/Product";
-import { ICategory } from "../domain/model/Category";
+import { IProduct } from "../../../domain/model/Product";
+import { ICategory } from "../../../domain/model/Category";
 
 export const CategorySchema = new Schema<ICategory>(
     {

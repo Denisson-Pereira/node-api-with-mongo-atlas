@@ -1,9 +1,9 @@
 import { IncomingMessage, ServerResponse } from "http";
 import { RepositoryCategoryImpl } from "../adapters/RepositoryCategoryImpl";
-import { CreateCategoryUseCase } from "../domain/useCases/categories/CreateCategoryUseCase";
-import { ICategory } from "../domain/model/Category";
-import { parseRequestBody } from "../shared/parseRequestBody";
-import { GetAllCategoriesUseCase } from "../domain/useCases/categories/GetAllCategoriesUseCase";
+import { CreateCategoryUseCase } from "../../domain/useCases/categories/CreateCategoryUseCase";
+import { ICategory } from "../../domain/model/Category";
+import { parseRequestBody } from "../../driversAndFrameworks/http/parseRequestBody";
+import { GetAllCategoriesUseCase } from "../../domain/useCases/categories/GetAllCategoriesUseCase";
 
 export class CategoryController {
     private createCategoryUseCase: CreateCategoryUseCase;

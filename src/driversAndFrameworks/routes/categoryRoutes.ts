@@ -1,5 +1,5 @@
 import { IncomingMessage, ServerResponse } from "http";
-import { CategoryController } from "../controllers/CategoryController";
+import { CategoryController } from "../../interfaceAdapters/controllers/CategoryController";
 
 const categoryController = new CategoryController();
 
