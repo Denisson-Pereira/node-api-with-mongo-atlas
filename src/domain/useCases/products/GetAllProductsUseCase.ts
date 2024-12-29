@@ -8,7 +8,7 @@ export class GetAllProductsUseCase {
         this.repository = repository;
     }
 
-    async execute(): Promise<IProduct[]> {
+    execute(): Promise<IProduct[]> {
         return this.repository.getAllProducts();
     }
     

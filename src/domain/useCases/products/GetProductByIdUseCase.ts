@@ -8,7 +8,7 @@ export class GetProductByIdUseCase {
         this.repository = repository;
     }
 
-    async execute(id: string): Promise<IProduct | null> {
+    execute(id: string): Promise<IProduct | null> {
         return this.repository.getProductById(id);
     }
 }

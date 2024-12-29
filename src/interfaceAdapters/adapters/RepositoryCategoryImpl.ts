@@ -13,7 +13,7 @@ export class RepositoryCategoryImpl implements IRepositoryCategory {
         return category;
     }
     async getCategoryById(id: string): Promise<ICategory | null> {
-        const response = CategoryModel.findById(id);
+        const response = await CategoryModel.findById(id);
         return response;
     }
     async deleteById(id: string): Promise<string> {

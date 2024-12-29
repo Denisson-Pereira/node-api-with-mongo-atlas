@@ -8,7 +8,7 @@ export class DeleteProductByIdUseCase {
         this.repository = repository;
     }
 
-    async execute(id: string): Promise<string> {
+    execute(id: string): Promise<string> {
         if (!id) {
             throw new InvalidIdError();
         }

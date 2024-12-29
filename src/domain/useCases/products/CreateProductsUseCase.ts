@@ -9,7 +9,7 @@ export class CreateProductsUseCase {
         this.repository = repository;
     }
 
-    async execute(product: IProduct): Promise<IProduct> {
+    execute(product: IProduct): Promise<IProduct> {
         if(parseFloat(product.price) <= 0) {
             throw new InvalidPriceError()
         }

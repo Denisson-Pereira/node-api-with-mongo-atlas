@@ -8,7 +8,7 @@ export class GetAllCategoriesUseCase {
         this.repository = reposioty;
     }
 
-    async execute(): Promise<ICategory[]> {
+    execute(): Promise<ICategory[]> {
         return this.repository.getAllCategories();
     }
 

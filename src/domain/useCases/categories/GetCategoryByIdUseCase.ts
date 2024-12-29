@@ -1,15 +1,14 @@
 import { IRepositoryCategory } from "../../../interfaceAdapters/ports/IRepositoryCategory";
 import { ICategory } from "../../model/Category";
 
-
-export class CreateCategoryUseCase {
+export class GetCategoryByIdUseCase {
     private repository: IRepositoryCategory;
 
     constructor(repository: IRepositoryCategory) {
         this.repository = repository;
     }
 
-    execute(product: ICategory): Promise<ICategory> {
-        return this.repository.save(product);
+    execute(id: string): Promise<ICategory | null> {
+        return this.repository.getCategoryById(id);
     }
 }
