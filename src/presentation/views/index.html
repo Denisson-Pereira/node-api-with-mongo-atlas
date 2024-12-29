@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>API Documentation</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
-    <h1>testando</h1>
+    <h1>API Documentation</h1>
+    <div class="route">
+        <h2>/products</h2>
+        <div class="method get">GET</div>
+        <div class="method post">POST</div>
+        <div class="method put">PUT</div>
+        <div class="method delete">DELETE</div>
+        <div class="description">
+            <p>Esta rota lida com produtos. Você pode usar os seguintes métodos:</p>
+            <ul>
+                <li><strong>GET</strong>: Retorna todos os produtos.</li>
+                <li><strong>POST</strong>: Cria um novo produto.</li>
+                <li><strong>PUT</strong>: Atualiza um produto existente.</li>
+                <li><strong>DELETE</strong>: Deleta um produto.</li>
+            </ul>
+            <p><strong>Estrutura de um Produto:</strong></p>
+            <pre><code>
+export interface IProduct {
+    name: string;
+    description: string;
+    price: string;
+    evaluation: string;
+    image: string;
+}
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="route">
+        <h2>/categories</h2>
+        <div class="method get">GET</div>
+        <div class="method post">POST</div>
+        <div class="method put">PUT</div>
+        <div class="method delete">DELETE</div>
+        <div class="description">
+            <p>Esta rota lida com categorias. Você pode usar os seguintes métodos:</p>
+            <ul>
+                <li><strong>GET</strong>: Retorna todas as categorias.</li>
+                <li><strong>POST</strong>: Cria uma nova categoria.</li>
+                <li><strong>PUT</strong>: Atualiza uma categoria existente.</li>
+                <li><strong>DELETE</strong>: Deleta uma categoria.</li>
+            </ul>
+            <p><strong>Estrutura de uma Categoria:</strong></p>
+            <pre><code>
+export interface ICategory {
+    name: string;
+    description: string;
+    image: string;
+}
+            </code></pre>
+        </div>
+    </div>
 </body>
+
 </html>

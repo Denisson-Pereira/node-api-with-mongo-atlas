@@ -19,7 +19,6 @@ const server = http.createServer((req: IncomingMessage, res: ServerResponse) => 
                     res.end('Server error!')
                     return;
                 }
-
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'text/html');
                 res.end(data);
