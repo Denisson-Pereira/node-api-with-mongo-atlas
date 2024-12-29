@@ -9,8 +9,12 @@ export const categoryRoutes = (req: IncomingMessage, res: ServerResponse): void 
     const id = url?.startsWith("cateogry") ? url.split("/")[2]: null;
 
     switch(true) {
-        case method === "POST" && url === "/category":
+        case method === "POST" && url === "/categories":
         categoryController.createCategory(req, res);
+        break;
+
+        case method === "GET" && url === "/categories":
+        categoryController.getAllCategory(req, res);
         break;
 
         default:

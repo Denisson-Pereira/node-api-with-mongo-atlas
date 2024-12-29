@@ -1,21 +1,37 @@
 import { ICategory } from "../domain/model/Category";
+import { CategoryModel } from "../drivers/CategorySchema";
+import { ProductModel } from "../drivers/ProductSchema";
 import { IRepositoryCategory } from "../ports/IRepositoryCategory";
 
 export class RepositoryCategoryImpl implements IRepositoryCategory {
-    getAllCategories(): Promise<ICategory[]> {
-        throw new Error("Method not implemented.");
+    async getAllCategories(): Promise<ICategory[]> {
+        const response = await CategoryModel.find();
+        return response;
     }
-    save(Category: ICategory): Promise<ICategory> {
-        throw new Error("Method not implemented.");
+    async save(category: ICategory): Promise<ICategory> {
+        await CategoryModel.create(category);
+        return category;
     }
-    getCategoryById(id: string): Promise<ICategory | null> {
-        throw new Error("Method not implemented.");
+    async getCategoryById(id: string): Promise<ICategory | null> {
+        const response = CategoryModel.findById(id);
+        return response;
     }
-    deleteById(id: string): Promise<string> {
-        throw new Error("Method not implemented.");
+    async deleteById(id: string): Promise<string> {
+        await CategoryModel.findByIdAndDelete(id);
+        return "Deletado com sucesso!";
+
     }
-    update(id: string, Category: ICategory): Promise<ICategory | null> {
-        throw new Error("Method not implemented.");
+    async update(id: string, category: ICategory): Promise<ICategory | null> {
+        const searchCategory = await CategoryModel.findById(id);
+
+        if(searchCategory) {
+            searchCategory.set(category);
+            await searchCategory.save();
+
+            return searchCategory;
+        } else {
+            return null;
+        }
     }
 
 
