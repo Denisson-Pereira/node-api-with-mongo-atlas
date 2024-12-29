@@ -24,7 +24,8 @@ const server = http.createServer((req: IncomingMessage, res: ServerResponse) => 
                 res.end(data);
             })
             break;
-        
+
+
         case req.url?.startsWith("/css/"):
             const filePathCss = path.join(__dirname, "presentation", "css", "styles.css");
             fs.readFile(filePathCss, (err, data) => {

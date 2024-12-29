@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Documentation</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-
 <body>
     <h1>API Documentation</h1>
+
     <div class="route">
         <h2>/products</h2>
         <div class="method get">GET</div>
@@ -24,14 +23,30 @@
                 <li><strong>PUT</strong>: Atualiza um produto existente.</li>
                 <li><strong>DELETE</strong>: Deleta um produto.</li>
             </ul>
-            <p><strong>Estrutura de um Produto:</strong></p>
+            <p><strong>Atributos de um Produto:</strong></p>
+            <ul>
+                <li><strong>_id</strong>: Identificador único do produto (tipo string, gerado automaticamente pelo MongoDB).</li>
+                <li><strong>name</strong>: Nome do produto (tipo string).</li>
+                <li><strong>description</strong>: Descrição do produto (tipo string).</li>
+                <li><strong>price</strong>: Preço do produto (tipo string, pode ter valores numéricos formatados como string).</li>
+                <li><strong>evaluation</strong>: Avaliação do produto (tipo string, geralmente com uma pontuação numérica representada como string).</li>
+                <li><strong>image</strong>: URL da imagem do produto (tipo string).</li>
+                <li><strong>createdAt</strong>: Data de criação do produto (tipo string, formato ISO 8601).</li>
+                <li><strong>updatedAt</strong>: Data da última atualização do produto (tipo string, formato ISO 8601).</li>
+                <li><strong>__v</strong>: Versão do documento (campo interno do Mongoose, tipo inteiro, controlado automaticamente pelo banco de dados).</li>
+            </ul>
+            <p><strong>Exemplo de um Produto:</strong></p>
             <pre><code>
-export interface IProduct {
-    name: string;
-    description: string;
-    price: string;
-    evaluation: string;
-    image: string;
+{
+    "_id": "676f18936a4e2bd8fea621cb",
+    "name": "Produto Teste",
+    "description": "Descrição do produto de teste",
+    "price": "999",
+    "evaluation": "4.5",
+    "image": "https://exemplo.com/imagem.jpg",
+    "createdAt": "2024-12-27T21:13:55.167Z",
+    "updatedAt": "2024-12-28T02:08:14.875Z",
+    "__v": 0
 }
             </code></pre>
         </div>
@@ -51,16 +66,29 @@ export interface IProduct {
                 <li><strong>PUT</strong>: Atualiza uma categoria existente.</li>
                 <li><strong>DELETE</strong>: Deleta uma categoria.</li>
             </ul>
-            <p><strong>Estrutura de uma Categoria:</strong></p>
+            <p><strong>Atributos de uma Categoria:</strong></p>
+            <ul>
+                <li><strong>_id</strong>: Identificador único da categoria (tipo string, gerado automaticamente pelo MongoDB).</li>
+                <li><strong>name</strong>: Nome da categoria (tipo string).</li>
+                <li><strong>description</strong>: Descrição da categoria (tipo string).</li>
+                <li><strong>image</strong>: URL da imagem da categoria (tipo string).</li>
+                <li><strong>createdAt</strong>: Data de criação da categoria (tipo string, formato ISO 8601).</li>
+                <li><strong>updatedAt</strong>: Data da última atualização da categoria (tipo string, formato ISO 8601).</li>
+                <li><strong>__v</strong>: Versão do documento (campo interno do Mongoose, tipo inteiro, controlado automaticamente pelo banco de dados).</li>
+            </ul>
+            <p><strong>Exemplo de uma Categoria:</strong></p>
             <pre><code>
-export interface ICategory {
-    name: string;
-    description: string;
-    image: string;
+{
+    "_id": "6770af4200ddd1bb0c7cf80b",
+    "name": "Categoria Teste",
+    "description": "Descrição da categoria teste",
+    "image": "https://exemplo.com/imagem.jpg",
+    "createdAt": "2024-12-29T02:09:06.077Z",
+    "updatedAt": "2024-12-29T02:09:06.077Z",
+    "__v": 0
 }
             </code></pre>
         </div>
     </div>
 </body>
-
 </html>
