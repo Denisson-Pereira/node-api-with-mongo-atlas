@@ -1,4 +1,4 @@
-import { IRepositoryCategory } from "../../../interfaceAdapters/ports/IRepositoryCategory";
+import { IRepositoryCategory } from "../../ports/IRepositoryCategory";
 import { ICategory } from "../../model/Category";
 
 export class PutCategoryUseCase {

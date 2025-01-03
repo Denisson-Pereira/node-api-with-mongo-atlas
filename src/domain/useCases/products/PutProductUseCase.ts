@@ -1,5 +1,5 @@
 import { IProduct } from "../../model/Product";
-import { IRepositoryProduct } from "../../../interfaceAdapters/ports/IRepositoryProduct";
+import { IRepositoryProduct } from "../../ports/IRepositoryProduct";
 import { InvalidPriceError } from "../../exceptions/InvalidPriceError";
 
 export class PutProductUseCase {

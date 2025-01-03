@@ -1,4 +1,4 @@
-import { IRepositoryCategory } from "../../../interfaceAdapters/ports/IRepositoryCategory";
+import { IRepositoryCategory } from "../../ports/IRepositoryCategory";
 import { InvalidIdError } from "../../exceptions/InvalidIdError";
 
 export class DeleteCategoryByIdUseCase {

@@ -1,7 +1,7 @@
 import { ICategory } from "../../domain/model/Category";
 import { CategoryModel } from "../../driversAndFrameworks/db/schemas/CategorySchema";
 import { ProductModel } from "../../driversAndFrameworks/db/schemas/ProductSchema";
-import { IRepositoryCategory } from "../ports/IRepositoryCategory";
+import { IRepositoryCategory } from "../../domain/ports/IRepositoryCategory";
 
 export class RepositoryCategoryImpl implements IRepositoryCategory {
     async getAllCategories(): Promise<ICategory[]> {
