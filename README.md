@@ -23,9 +23,9 @@ Este projeto é uma **API** desenvolvida em **Node.js** com **TypeScript**, segu
 
 # 🧱 Arquitetura e Design
 
-O planejamento desta aplicação foi desenvolvido com base no **data-driven design**, que orienta as decisões de *design* a partir das necessidades e interações dos dados, garantindo flexibilidade e escalabilidade. A arquitetura escolhida foi a **Clean Architecture**, que promove a separação clara entre as regras de negócios e os detalhes de implementação, protegendo o sistema de dependências diretas de *frameworks*. Isso permite, por exemplo, substituir o **MongoDB** por outro banco de dados sem impactar as entidades ou casos de uso, mantendo a aplicação independente de tecnologias específicas. Além disso, conceitos da arquitetura hexagonal foram aplicados, utilizando contratos (*ports*) e implementações (*adapters*) para garantir a comunicação entre as camadas do sistema de forma desacoplada, em conformidade com a regra da dependência.
-
 <img src="./github/clean.png" min-width="100px" max-width="100px" width="300px" align="right" alt="Computador iuriCode">
+
+O planejamento desta aplicação foi desenvolvido com base no **data-driven design**, que orienta as decisões de *design* a partir das necessidades e interações dos dados, garantindo flexibilidade e escalabilidade. A arquitetura escolhida foi a **Clean Architecture**, que promove a separação clara entre as regras de negócios e os detalhes de implementação, protegendo o sistema de dependências diretas de *frameworks*. Isso permite, por exemplo, substituir o **MongoDB** por outro banco de dados sem impactar as entidades ou casos de uso, mantendo a aplicação independente de tecnologias específicas. Além disso, conceitos da arquitetura hexagonal foram aplicados, utilizando contratos (*ports*) e implementações (*adapters*) para garantir a comunicação entre as camadas do sistema de forma desacoplada, em conformidade com a regra da dependência.
 
 # 🏛️ SOLID
 
