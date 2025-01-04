@@ -1,6 +1,7 @@
-import { ICategory } from "../domain/model/Category";
-import { IRepositoryCategory } from "../domain/ports/IRepositoryCategory";
-import { CreateCategoryUseCase } from "../domain/useCases/categories/CreateCategoryUseCase";
+import { ICategory } from "../../domain/model/Category";
+import { IRepositoryCategory } from "../../domain/ports/IRepositoryCategory";
+import { CreateCategoryUseCase } from "../../domain/useCases/categories/CreateCategoryUseCase";
+
 
 
 describe("CreateCategoryUseCase", () => {

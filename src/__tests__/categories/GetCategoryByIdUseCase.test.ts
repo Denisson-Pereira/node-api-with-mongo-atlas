@@ -1,6 +1,6 @@
-import { ICategory } from "../domain/model/Category";
-import { IRepositoryCategory } from "../domain/ports/IRepositoryCategory"
-import { GetCategoryByIdUseCase } from "../domain/useCases/categories/GetCategoryByIdUseCase";
+import { ICategory } from "../../domain/model/Category";
+import { IRepositoryCategory } from "../../domain/ports/IRepositoryCategory"
+import { GetCategoryByIdUseCase } from "../../domain/useCases/categories/GetCategoryByIdUseCase";
 
 describe("GetCategoryByIdUseCase", () => {
     let mockRepository: jest.Mocked<IRepositoryCategory>;

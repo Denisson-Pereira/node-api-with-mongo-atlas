@@ -1,7 +1,7 @@
-import { InvalidIdError } from "../domain/exceptions/InvalidIdError";
-import { ICategory } from "../domain/model/Category";
-import { IRepositoryCategory } from "../domain/ports/IRepositoryCategory"
-import { DeleteCategoryByIdUseCase } from "../domain/useCases/categories/DeleteCategoryByIdUseCase";
+import { InvalidIdError } from "../../domain/exceptions/InvalidIdError";
+import { ICategory } from "../../domain/model/Category";
+import { IRepositoryCategory } from "../../domain/ports/IRepositoryCategory"
+import { DeleteCategoryByIdUseCase } from "../../domain/useCases/categories/DeleteCategoryByIdUseCase";
 
 describe("DeleteCategoryUseCase", () => {
     let mockRepository: jest.Mocked<IRepositoryCategory>;
