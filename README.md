@@ -33,7 +33,7 @@ Com a **Clean Architecture**, as regras de negócio podem ser testadas de forma 
 
 # 📕 Documentação e Curiosidades
 
-O projeto não utiliza frameworks como Express, sendo desenvolvido com o módulo HTTP nativo do Node.js. Dessa forma, a documentação foi criada manualmente com HTML e CSS puro, incluindo até mesmo as rotas configuradas de forma personalizada. Por fim, As variáveis de ambiente são gerenciadas com o uso do arquivo .env, assegurando maior segurança e flexibilidade na configuração.
+O projeto não utiliza *frameworks* como *Express*, sendo desenvolvido com o módulo **HTTP** nativo do **Node.js**. Dessa forma, a documentação foi criada manualmente com **HTML5** e **CSS3** puro, incluindo até mesmo as rotas configuradas de forma personalizada. Por fim, As variáveis de ambiente são gerenciadas com o uso do arquivo **.env**, assegurando maior segurança e flexibilidade na configuração.
 
 # 🚨 Aguarde! Ainda não terminou!
 
