@@ -27,6 +27,14 @@ O planejamento desta aplicação foi desenvolvido com base no **data-driven desi
 
 <img src="./github/clean.png" min-width="100px" max-width="100px" width="300px" align="right" alt="Computador iuriCode">
 
+# 🏛️ SOLID
+
+• **Single Responsibility Principle:** A aplicação segue o princípio da responsabilidade única, garantindo que cada classe ou módulo tenha uma única responsabilidade;
+
+• **Open/Closed Principle:** A arquitetura da aplicação adota o princípio aberto/fechado, ou seja, ela está aberta para extensões, mas fechada para modificações. Isso significa que novas funcionalidades podem ser adicionadas sem a necessidade de alterar o código existente;
+
+• **Dependency Inversion Principle:** O princípio da inversão de dependência é seguido, permitindo que os módulos de alto nível (como as regras de negócio) dependam de abstrações, e não de implementações concretas. Isso é alcançado utilizando Ports e Adapters, onde as interfaces (ports) representam contratos de comunicação, e as implementações concretas (adapters) fornecem a funcionalidade necessária. Isso permite que a aplicação seja facilmente modificada ou adaptada a novas tecnologias, sem afetar as regras de negócio.
+
 # 🧪 Testes Automatizados e Garantia de Funcionamento
 
 Com a **Clean Architecture**, as regras de negócio podem ser testadas de forma independente da interface do usuário, banco de dados, servidor *web* ou qualquer outro componente externo. Para garantir essa independência, foi utilizado o **Jest** para criar testes com repositórios *mockados*, assegurando a validação das lógicas de negócio de maneira isolada e eficiente. Ademais, a aplicação conta com o Docker para facilitar a criação, distribuição e execução de contêineres, garantindo um ambiente de desenvolvimento e produção consistente e isolado.
