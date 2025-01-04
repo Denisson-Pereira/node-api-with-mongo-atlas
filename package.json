@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@types/cors": "^2.8.17",
+    "dotenv": "^16.4.7",
     "mongoose": "^8.9.2"
   }
 }
